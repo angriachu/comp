@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Compass Tours | Expert Travel Professionals in Kerala</title>
+    <meta name="description" content="Meet our passionate team of travel experts, guides, and professionals dedicated to creating unforgettable travel experiences in Kerala and beyond. Experienced staff with deep destination knowledge.">
+    <meta name="keywords" content="travel team, travel experts, tour guides, travel professionals, compass tours staff, kerala">
+    <meta name="author" content="Compass Tours">
+    <meta property="og:title" content="Our Team - Compass Tours">
+    <meta property="og:description" content="Meet our passionate team of travel experts and professionals dedicated to creating unforgettable experiences in Kerala.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://compasstours.in/team">
+    <link rel="canonical" href="https://compasstours.in/team">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23ff6b35" stroke="%23fff" stroke-width="2"/></svg>'), auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .phone-btn {
+            color: white;
+            padding: 0.3rem 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .phone-btn:hover {
+            opacity: 0.8;
+        }
+
+        .whatsapp-btn {
+            color: white;
+            padding: 0.3rem 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .whatsapp-btn:hover {
+            opacity: 0.8;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .logo:hover {
+            color: #ffd700;
+            transition: color 0.3s ease;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            flex-shrink: 1;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .team-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .member-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .member-position {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-expertise {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .expertise-tag {
+            background: #f0f0f0;
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            color: #667eea;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #764ba2;
+        }
+
+        /* Leadership Section */
+        .leadership {
+            background: #f8f9fa;
+            padding: 5rem 0;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .leader-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
+        .leader-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .leader-info .position {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .leader-info p {
+            color: #666;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leader-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                transition: left 0.3s ease;
+                z-index: 999;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+                font-size: 1.2rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .mobile-menu.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .mobile-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .header-contact {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leader-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">🧭 Compass Tours</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="plan.html">Plan a Trip</a></li>
+                    <li><a href="whyus.html">Why Us?</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+919400978436" class="phone-btn">📞 +91 9400978436</a>
+                <a href="https://wa.me/919400978436" class="whatsapp-btn">💬 WhatsApp</a>
+            </div>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div>
+            <h1>Meet Our Team</h1>
+            <p>Passionate travel experts dedicated to creating unforgettable experiences</p>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Our Travel Experts</h2>
+            <div class="team-intro">
+                <p>Our team consists of experienced travel professionals, certified guides, and destination specialists who are passionate about sharing their knowledge and creating extraordinary journeys for our clients.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80');"></div>
+                    <div class="member-info">
+                        <h3 class="member-name">NIDHIN INDIRA</h3>
+                        <p class="member-position">Travel Expert</p>
+                        <p class="member-bio">Nidhin specializes in crafting personalized travel experiences across India, ensuring every journey is memorable.</p>
+                        <div class="member-expertise">
+                            <span class="expertise-tag">Kerala</span>
+                            <span class="expertise-tag">Custom Tours</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#">📧</a>
+                            <a href="#">💼</a>
+                            <a href="#">📱</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80');"></div>
+                    <div class="member-info">
+                        <h3 class="member-name">JESWIN CARDOZ</h3>
+                        <p class="member-position">Travel Expert</p>
+                        <p class="member-bio">Jeswin brings a wealth of knowledge in group and pilgrimage tours, making every trip seamless and enjoyable.</p>
+                        <div class="member-expertise">
+                            <span class="expertise-tag">Pilgrimage</span>
+                            <span class="expertise-tag">Group Travel</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#">📧</a>
+                            <a href="#">💼</a>
+                            <a href="#">📱</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80');"></div>
+                    <div class="member-info">
+                        <h3 class="member-name">ANOOP G PILLAI</h3>
+                        <p class="member-position">Travel Expert</p>
+                        <p class="member-bio">Anoop is passionate about adventure and eco-tourism, curating unique experiences for thrill-seekers.</p>
+                        <div class="member-expertise">
+                            <span class="expertise-tag">Adventure</span>
+                            <span class="expertise-tag">Eco-Tourism</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#">📧</a>
+                            <a href="#">💼</a>
+                            <a href="#">📱</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80');"></div>
+                    <div class="member-info">
+                        <h3 class="member-name">AMALJITH</h3>
+                        <p class="member-position">Travel Expert</p>
+                        <p class="member-bio">Amaljith ensures every client receives exceptional service and support throughout their journey with us.</p>
+                        <div class="member-expertise">
+                            <span class="expertise-tag">Customer Service</span>
+                            <span class="expertise-tag">Support</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#">📧</a>
+                            <a href="#">💼</a>
+                            <a href="#">📱</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80');"></div>
+                    <div class="member-info">
+                        <h3 class="member-name">KICHU SURESH</h3>
+                        <p class="member-position">Travel Expert</p>
+                        <p class="member-bio">Kichu is an expert in digital travel solutions and smooth operations for all travel arrangements.</p>
+                        <div class="member-expertise">
+                            <span class="expertise-tag">Technology</span>
+                            <span class="expertise-tag">Operations</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#">📧</a>
+                            <a href="#">💼</a>
+                            <a href="#">📱</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=688&q=80');"></div>
+                    <div class="member-info">
+                        <h3 class="member-name">HARISREE DEVARAJAN</h3>
+                        <p class="member-position">Travel Expert</p>
+                        <p class="member-bio">Harisree has extensive knowledge of Indian destinations and specializes in authentic local experiences.</p>
+                        <div class="member-expertise">
+                            <span class="expertise-tag">India</span>
+                            <span class="expertise-tag">Local Experiences</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#">📧</a>
+                            <a href="#">💼</a>
+                            <a href="#">📱</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="leadership">
+        <div class="container">
+            <h2 class="section-title">Leadership Team</h2>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80');"></div>
+                    <div class="leader-info">
+                        <h3>NIDHIN INDIRA</h3>
+                        <p class="position">CEO & Founder</p>
+                        <p>With 25+ years in the travel industry, Nidhin founded Compass Tours with a vision to create extraordinary travel experiences that connect people with the world's most beautiful destinations.</p>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=688&q=80');"></div>
+                    <div class="leader-info">
+                        <h3>JESWIN CARDOZ</h3>
+                        <p class="position">Chief Operations Officer</p>
+                        <p>Jeswin oversees all operational aspects of Compass Tours, ensuring seamless execution of travel experiences and maintaining our high standards of service excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Expert Team Members</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Destinations Covered</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Compass Tours</h3>
+                    <p>Your trusted partner for unforgettable travel experiences in Kerala and beyond.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="vehicles.html">Vehicles</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="plan.html">Plan a Trip</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📧 info@compasstours.in</li>
+                        <li>📞 +91 9400978436</li>
+                        <li>📍 Compass Tours, Karunagapally, Kollam, Kerala</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Compass Tours. All rights reserved. | <a href="contact.html">Privacy Policy</a> | <a href="contact.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const nav = document.querySelector('nav');
+            
+            mobileMenu.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html> 

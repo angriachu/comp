@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass Tours - Your Journey Begins Here | Premium Travel Services in Kerala</title>
+    <meta name="description" content="Discover extraordinary destinations with Compass Tours. Premium travel services, pilgrimage packages, expert guides, and unforgettable experiences in Kerala and beyond. Start your adventure today!">
+    <meta name="keywords" content="travel, adventure, tours, vacation, destinations, travel agency, compass tours, kerala, pilgrimage, india">
+    <meta name="author" content="Compass Travels">
+    <meta property="og:title" content="Compass Tours - Your Journey Begins Here">
+    <meta property="og:description" content="Discover extraordinary destinations with Compass Tours. Premium travel services and unforgettable experiences in Kerala.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://compasstours.in">
+    <link rel="canonical" href="https://compasstours.in">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23ff6b35" stroke="%23fff" stroke-width="2"/></svg>'), auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .phone-btn {
+            color: white;
+            padding: 0.3rem 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .phone-btn:hover {
+            opacity: 0.8;
+        }
+
+        .whatsapp-btn {
+            color: white;
+            padding: 0.3rem 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .whatsapp-btn:hover {
+            opacity: 0.8;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .logo:hover {
+            color: #ffd700;
+            transition: color 0.3s ease;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            flex-shrink: 1;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Floating Images */
+        .floating-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-image {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            opacity: 0.8;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-image:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+            background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+        }
+
+        .floating-image:nth-child(2) {
+            top: 25%;
+            right: 15%;
+            animation-delay: 1s;
+            background-image: url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+        }
+
+        .floating-image:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 2s;
+            background-image: url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+        }
+
+        .floating-image:nth-child(4) {
+            bottom: 20%;
+            right: 25%;
+            animation-delay: 3s;
+            background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+        }
+
+        .floating-image:nth-child(5) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 4s;
+            background-image: url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(-1deg);
+            }
+            75% {
+                transform: translateY(-15px) rotate(1deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Transition Images Section */
+        .transition-images {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .image-slider {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .slide-content h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Slide Indicators */
+        .slide-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator.active {
+            background: white;
+        }
+
+        .indicator:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* Destinations Section */
+        .destinations {
+            padding: 5rem 0;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .destination-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .destination-card:hover {
+            transform: scale(1.05);
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .destination-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem;
+        }
+
+        .destination-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                transition: left 0.3s ease;
+                z-index: 999;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+                font-size: 1.2rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .mobile-menu.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .mobile-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .header-contact {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Mobile Floating Images */
+            .floating-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .floating-image:nth-child(1) {
+                top: 10%;
+                left: 5%;
+            }
+
+            .floating-image:nth-child(2) {
+                top: 20%;
+                right: 10%;
+            }
+
+            .floating-image:nth-child(3) {
+                bottom: 25%;
+                left: 15%;
+            }
+
+            .floating-image:nth-child(4) {
+                bottom: 15%;
+                right: 20%;
+            }
+
+            .floating-image:nth-child(5) {
+                top: 45%;
+                left: 45%;
+            }
+
+            /* Mobile Slide Indicators */
+            .slide-indicators {
+                bottom: 15px;
+                gap: 8px;
+            }
+
+            .indicator {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">🧭 Compass Tours</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="plan.html">Plan a Trip</a></li>
+                    <li><a href="whyus.html">Why Us?</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+919400978436" class="phone-btn">📞 +91 9400978436</a>
+                <a href="https://wa.me/919400978436" class="whatsapp-btn">💬 WhatsApp</a>
+            </div>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="floating-images">
+            <div class="floating-image"></div>
+            <div class="floating-image"></div>
+            <div class="floating-image"></div>
+            <div class="floating-image"></div>
+            <div class="floating-image"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Your Journey Begins Here</h1>
+            <p>Discover extraordinary destinations in Kerala and beyond with our premium travel services</p>
+            <a href="plan.html" class="cta-button">Start Your Adventure</a>
+        </div>
+    </section>
+
+    <section class="transition-images">
+        <div class="container">
+            <div class="image-slider">
+                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="slide-content">
+                        <h3>Kerala Backwaters</h3>
+                        <p>Experience the serene beauty of houseboat cruises through palm-fringed waterways</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="slide-content">
+                        <h3>Munnar Tea Gardens</h3>
+                        <p>Explore the misty mountains and lush tea plantations of God's Own Country</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="slide-content">
+                        <h3>Taj Mahal, Agra</h3>
+                        <p>Witness the eternal symbol of love and one of the Seven Wonders of the World</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1565967511849-76a60a516170?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="slide-content">
+                        <h3>Varanasi Ghats</h3>
+                        <p>Experience the spiritual essence of India's oldest living city on the banks of Ganga</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="slide-content">
+                        <h3>Golden Temple, Amritsar</h3>
+                        <p>Visit the holiest shrine of Sikhism and experience divine peace and harmony</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="slide-content">
+                        <h3>Hampi Ruins</h3>
+                        <p>Explore the magnificent ruins of the Vijayanagara Empire, a UNESCO World Heritage site</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="slide-content">
+                        <h3>Khajuraho Temples</h3>
+                        <p>Discover the architectural marvels and intricate sculptures of ancient India</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="slide-content">
+                        <h3>Mysore Palace</h3>
+                        <p>Witness the grandeur of the Wodeyar dynasty and royal heritage of Karnataka</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="slide-content">
+                        <h3>Ajanta Caves</h3>
+                        <p>Marvel at the ancient Buddhist cave paintings and rock-cut architecture</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Compass Travels?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Premium Experience</h3>
+                    <p>Luxury accommodations and exclusive experiences tailored to your preferences.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕉️</div>
+                    <h3>Pilgrimage Packages</h3>
+                    <p>Sacred journey packages to major temples and spiritual destinations across India.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Expert Guides</h3>
+                    <p>Knowledgeable local guides who bring destinations to life with insider knowledge.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Safe & Secure</h3>
+                    <p>Your safety is our priority with comprehensive travel insurance and 24/7 support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinations">
+        <div class="container">
+            <h2 class="section-title">Popular Destinations</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Kerala Backwaters">
+                    <div class="destination-info">
+                        <h3>Kerala Backwaters</h3>
+                        <p>Serene houseboat experiences and lush landscapes</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Munnar">
+                    <div class="destination-info">
+                        <h3>Munnar, Kerala</h3>
+                        <p>Tea gardens and misty mountain views</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Tirupati">
+                    <div class="destination-info">
+                        <h3>Tirupati, Andhra Pradesh</h3>
+                        <p>Sacred temple and spiritual experiences</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Compass Tours</h3>
+                    <p>Your trusted partner for unforgettable travel experiences in Kerala and beyond.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="vehicles.html">Vehicles</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="plan.html">Plan a Trip</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📧 info@compasstours.in</li>
+                        <li>📞 +91 9400978436</li>
+                        <li>📍 Compass Tours, Karunagapally, Kollam, Kerala</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Compass Tours. All rights reserved. | <a href="contact.html">Privacy Policy</a> | <a href="contact.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const nav = document.querySelector('nav');
+            
+            mobileMenu.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+
+        // Image transition functionality
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            document.querySelector('.indicator.active').classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+            document.querySelectorAll('.indicator')[currentSlide].classList.add('active');
+        }
+
+        // Change slide every 5 seconds (increased for more slides)
+        setInterval(nextSlide, 5000);
+
+        // Add slide indicators
+        function createSlideIndicators() {
+            const slider = document.querySelector('.image-slider');
+            const indicatorsContainer = document.createElement('div');
+            indicatorsContainer.className = 'slide-indicators';
+            
+            slides.forEach((slide, index) => {
+                const indicator = document.createElement('span');
+                indicator.className = 'indicator';
+                if (index === 0) indicator.classList.add('active');
+                
+                indicator.addEventListener('click', () => {
+                    slides[currentSlide].classList.remove('active');
+                    document.querySelector('.indicator.active').classList.remove('active');
+                    currentSlide = index;
+                    slides[currentSlide].classList.add('active');
+                    indicator.classList.add('active');
+                });
+                
+                indicatorsContainer.appendChild(indicator);
+            });
+            
+            slider.appendChild(indicatorsContainer);
+        }
+
+        // Initialize indicators when page loads
+        document.addEventListener('DOMContentLoaded', createSlideIndicators);
+    </script>
+</body>
+</html> 
