@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Services - Compass Tours | Premium Tours & Pilgrimage Packages</title>
+    <meta name="description" content="Explore our comprehensive travel services including guided tours, pilgrimage packages, luxury packages, adventure trips, and custom itineraries. Professional travel planning for Kerala and beyond.">
+    <meta name="keywords" content="travel services, guided tours, pilgrimage packages, luxury travel, adventure trips, custom itineraries, travel packages, kerala">
+    <meta name="author" content="Compass Tours">
+    <meta property="og:title" content="Travel Services - Compass Tours">
+    <meta property="og:description" content="Comprehensive travel services including guided tours, pilgrimage packages, and custom itineraries.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://compasstours.in/services">
+    <link rel="canonical" href="https://compasstours.in/services">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23ff6b35" stroke="%23fff" stroke-width="2"/></svg>'), auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .phone-btn {
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .phone-btn:hover {
+            opacity: 0.8;
+        }
+
+        .whatsapp-btn {
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            opacity: 0.8;
+        }
+
+
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo:hover {
+            color: #ffd700;
+            transition: color 0.3s ease;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .book-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .book-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Additional Services */
+        .additional-services {
+            background: #f8f9fa;
+            padding: 5rem 0;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .header-contact {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">🧭 Compass Tours</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="plan.html">Plan a Trip</a></li>
+                    <li><a href="whyus.html">Why Us?</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+919400978436" class="phone-btn">📞 +91 9400978436</a>
+                <a href="https://wa.me/919400978436" class="whatsapp-btn">💬 WhatsApp</a>
+            </div>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div>
+            <h1>Our Travel Services</h1>
+            <p>Comprehensive travel solutions designed to make your journey unforgettable</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Premium Travel Packages</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Kerala Backwaters Experience</h3>
+                        <p>Experience the serene beauty of Kerala backwaters with our premium houseboat package.</p>
+                        <ul class="service-features">
+                            <li>Luxury houseboat accommodation</li>
+                            <li>Traditional Kerala cuisine</li>
+                            <li>Village tours and cultural experiences</li>
+                            <li>Ayurvedic spa treatments</li>
+                            <li>Professional guide services</li>
+                        </ul>
+                        <div class="service-price">From ₹15,000</div>
+                        <a href="plan.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Munnar Tea Gardens Tour</h3>
+                        <p>Explore the misty mountains and tea gardens of Munnar with our comprehensive tour package.</p>
+                        <ul class="service-features">
+                            <li>Tea estate visits</li>
+                            <li>Mountain trekking</li>
+                            <li>Wildlife sanctuary tour</li>
+                            <li>Local spice plantation</li>
+                            <li>Comfortable hill station stay</li>
+                        </ul>
+                        <div class="service-price">From ₹12,000</div>
+                        <a href="plan.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="service-content">
+                        <h3>South India Pilgrimage Tour</h3>
+                        <p>Sacred journey to major temples including Tirupati, Sabarimala, and Guruvayur.</p>
+                        <ul class="service-features">
+                            <li>Temple darshan arrangements</li>
+                            <li>Accommodation near temples</li>
+                            <li>Traditional prasadam</li>
+                            <li>Spiritual guide services</li>
+                            <li>Cultural heritage visits</li>
+                        </ul>
+                        <div class="service-price">From ₹18,000</div>
+                        <a href="plan.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="additional-services">
+        <div class="container">
+            <h2 class="section-title">Additional Services</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-icon">✈️</div>
+                    <h3>Flight Booking</h3>
+                    <p>Best deals on international and domestic flights with premium airlines.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🏨</div>
+                    <h3>Hotel Reservations</h3>
+                    <p>Luxury accommodations handpicked for comfort and convenience.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🚗</div>
+                    <h3>Transportation</h3>
+                    <p>Premium vehicle rentals and private transfer services worldwide.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🎫</div>
+                    <h3>Event Tickets</h3>
+                    <p>Exclusive access to concerts, shows, and cultural events.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Travel Insurance</h3>
+                    <p>Comprehensive coverage for peace of mind during your travels.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📞</div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock assistance for any travel-related emergencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Compass Tours</h3>
+                    <p>Your trusted partner for unforgettable travel experiences in Kerala and beyond.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="vehicles.html">Vehicles</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="plan.html">Plan a Trip</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📧 info@compasstours.in</li>
+                        <li>📞 +91 9400978436</li>
+                        <li>📍 Compass Tours, Karunagapally, Kollam, Kerala</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Compass Tours. All rights reserved. | <a href="contact.html">Privacy Policy</a> | <a href="contact.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
